@@ -1,0 +1,53 @@
+{
+  "cattle": [
+    {
+      "id": "1",
+      "breed": "Sahiwal",
+      "weight": 450,
+      "price": 120000,
+      "isAvailable": true
+    },
+    {
+      "id": "2",
+      "breed": "Sindhi",
+      "weight": 380,
+      "price": 95000,
+      "isAvailable": true
+    },
+    {
+      "id": "3",
+      "breed": "Holstein Friesian",
+      "weight": 520,
+      "price": 150000,
+      "isAvailable": true
+    },
+    {
+      "id": "4",
+      "breed": "Cholistani",
+      "weight": 400,
+      "price": 110000,
+      "isAvailable": true
+    },
+    {
+      "id": "eee9",
+      "breed": "dsndsm",
+      "weight": 123,
+      "price": 500000,
+      "isAvailable": true
+    },
+    {
+      "id": "d75b",
+      "breed": "hybrid",
+      "weight": 400,
+      "price": 300000,
+      "isAvailable": true
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "1234"
+    }
+  ]
+}

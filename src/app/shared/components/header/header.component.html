@@ -1,0 +1,16 @@
+<header class="navbar">
+  <div class="navbar-brand">
+    <span class="brand-title">🐄 Eid-ul-Adha Cattle Market</span>
+  </div>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+  <nav class="navbar-nav">
+    <ng-container *ngIf="currentUser">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/app-add-cattle" class="nav-item">Add New Cattle</a>
+      <button class="logout-btn" (click)="logout()">Logout ({{ currentUser.username }})</button>
+    </ng-container>
+  </nav>
+</header>

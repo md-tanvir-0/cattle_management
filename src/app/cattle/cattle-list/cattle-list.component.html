@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="container">
+    <h1>Cattle Inventory</h1>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+    <div *ngIf="loading" class="text-center my-4">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <div *ngIf="!loading && cattle.length === 0" class="alert alert-info">
+        No cattle available in the inventory.
+    </div>
+
+    <div class="card-container" *ngIf="!loading && cattle.length > 0">
+        <div class="card" *ngFor="let animal of cattle">
+            <div class="card-body">
+                <h3 class="card-title">{{ animal.breed }}</h3>
+                <div class="card-text">
+                    <p><strong>ID:</strong> {{ animal.id }}</p>
+                    <p><strong>Weight:</strong> {{ animal.weight }} kg</p>
+                    <p><strong>Price:</strong> {{ animal.price | priceFormat }}</p>
+                    <p>
+                        <span class="status-badge"
+                            [ngClass]="{'available': animal.isAvailable, 'sold': !animal.isAvailable}">
+                            {{ animal.isAvailable | availabilityStatus }}
+                        </span>
+                    </p>
+                </div>
+                <div class="card-actions">
+                    <button class="btn"
+                        [ngClass]="{'btn-warning': animal.isAvailable, 'btn-success': !animal.isAvailable}"
+                        (click)="toggleAvailability(animal)" [disabled]="updatingId === animal.id">
+                        <span *ngIf="updatingId === animal.id" class="spinner-border spinner-border-sm me-1"></span>
+                        {{ animal.isAvailable ? 'Mark as Sold' : 'Mark as Available' }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
