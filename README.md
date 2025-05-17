@@ -6,10 +6,6 @@
 
 > A modern Angular application for managing cattle inventory during Eid-ul-Adha festivities
 
-<p align="center">
-  <img src="/api/placeholder/800/400" alt="Cattle Market App Screenshot" />
-</p>
-
 ## ✨ Features
 
 - 🔐 **Secure Authentication** - JWT token-based login system
@@ -31,7 +27,7 @@
 
 ```bash
 git clone <repository-url>
-cd cattle-market-app
+cd cattle_management
 ```
 
 ### 2. Install dependencies
