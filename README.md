@@ -1,59 +1,106 @@
-# CattleManagement
+# 🐂 Cattle Management Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Angular](https://img.shields.io/badge/Angular-v16+-dd0031.svg)
+![Node](https://img.shields.io/badge/Node-v14+-339933.svg)
 
-## Development server
+> A modern Angular application for managing cattle inventory during Eid-ul-Adha festivities
 
-To start a local development server, run:
+<p align="center">
+  <img src="/api/placeholder/800/400" alt="Cattle Market App Screenshot" />
+</p>
+
+## ✨ Features
+
+- 🔐 **Secure Authentication** - JWT token-based login system
+- 📋 **Inventory Management** - View and manage your entire cattle inventory
+- 🔄 **Status Updates** - Toggle availability status (Sold/Available) in real-time
+- ➕ **Add New Inventory** - Easily add new cattle with comprehensive details
+- 💰 **Custom Formatting** - Price formatting with PKR currency symbol
+- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
+- 🧩 **Standalone Components** - Modern architecture for better maintainability
+
+## 📋 Prerequisites
+
+- **Node.js** (v14 or later)
+- **Angular CLI** (v16 or later)
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd cattle-market-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the mock API server
+
+```bash
+# Install json-server globally if you don't have it
+npm install -g json-server
+
+# Start the server using the mock data
+json-server --watch mock-api/db.json
+```
+
+> The server will run on http://localhost:3000
+
+### 4. Launch the application
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+> The application will be available at http://localhost:4200
 
-## Code scaffolding
+## 🔑 Login Credentials
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Username | Password |
+|----------|----------|
+| admin    | 1234     |
 
-```bash
-ng generate component component-name
-```
+## 🏗️ Architecture
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Key Components
 
-```bash
-ng generate --help
-```
+- **Login Component** - Handles user authentication
+- **Cattle List Component** - Displays all cattle with management options
+- **Add Cattle Component** - Form to add new cattle to the inventory
+- **Header Component** - Navigation with user controls
 
-## Building
+### Services
 
-To build the project run:
+| Service | Description |
+|---------|-------------|
+| `AuthService` | Manages authentication, token storage, and user state |
+| `CattleService` | Handles cattle data operations through API |
 
-```bash
-ng build
-```
+### Custom Pipes
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **PriceFormatPipe** - Formats prices with PKR currency symbol
+- **AvailabilityStatusPipe** - Converts boolean values to human-readable status text
 
-## Running unit tests
+## 🛠️ Implementation Details
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Authentication & Authorization
 
-```bash
-ng test
-```
+The application implements a secure token-based authentication system. Upon successful login, a JWT token is stored in localStorage and automatically attached to subsequent API requests via an HTTP interceptor. Protected routes are secured with a route guard.
 
-## Running end-to-end tests
+### Standalone Components
 
-For end-to-end (e2e) testing, run:
+All components are implemented using Angular's standalone components architecture, declaring their own dependencies directly rather than using NgModule. This approach enhances maintainability and improves application performance through better tree-shaking.
 
-```bash
-ng e2e
-```
+### State Management
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+A service-based state management approach is used, with services providing observables that components can subscribe to for real-time updates.
 
-## Additional Resources
+### Error Handling
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Comprehensive error handling has been implemented with user-friendly error messages when operations fail.
