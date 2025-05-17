@@ -45,6 +45,7 @@ npm install -g json-server
 cd mock-api
 # Start the server using the mock data
 json-server --watch db.json --port 3000
+!important----TRY ALL THIS COMMAND IT ON A NEW TERMINAL------
 ```
 
 > The server will run on http://localhost:3000
