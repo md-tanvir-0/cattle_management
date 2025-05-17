@@ -41,7 +41,8 @@ npm install
 ```bash
 # Install json-server globally if you don't have it
 npm install -g json-server
-
+#change directory
+cd mock-api
 # Start the server using the mock data
 json-server --watch mock-api/db.json
 ```
